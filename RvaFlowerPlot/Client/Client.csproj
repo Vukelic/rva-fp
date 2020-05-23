@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CCE54B84-B9CB-4759-9D53-72128C27E2BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\MyICommand.cs" />
+    <Compile Include="FlowerPlotIterationProxy.cs" />
+    <Compile Include="FlowerProxy.cs" />
+    <Compile Include="LoggerTable.cs" />
+    <Compile Include="SoilProxy.cs" />
+    <Compile Include="TypeEventLog.cs" />
+    <Compile Include="UserProxy.cs" />
+    <Compile Include="ViewModel\AddEditFlowerPlotViewModel.cs" />
+    <Compile Include="ViewModel\AddEditViewModel.cs" />
+    <Compile Include="ViewModel\AdminViewModel.cs" />
+    <Compile Include="ViewModel\FlowerPlotViewModel.cs" />
+    <Compile Include="ViewModel\FlowerViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\SoilTypeViewModel.cs" />
+    <Compile Include="View\AddEditFlowerPlotWindow.xaml.cs">
+      <DependentUpon>AddEditFlowerPlotWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditWindow.xaml.cs">
+      <DependentUpon>AddEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FlowerPlotWindow.xaml.cs">
+      <DependentUpon>FlowerPlotWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FlowerWindow.xaml.cs">
+      <DependentUpon>FlowerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SoilTypeWindow.xaml.cs">
+      <DependentUpon>SoilTypeWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\AddEditFlowerPlotWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FlowerPlotWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FlowerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SoilTypeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{94A92BC6-DBCA-4417-81F7-17C22E9B1BF2}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\admin_bsckground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\registration.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\edit_user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settings_backgound.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\save_pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\delete_user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\delete_user - Copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\flower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cycle_flower.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add_flower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logout_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\soil_icon.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\type_flowers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\seed_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\soil_pic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\flowerPlot.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\refresh_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\duplicate_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\exit_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\flower_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\exit_pic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\redo_icon.png" />
+    <Resource Include="Images\undo_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\users_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\exit1_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\clear_all.JPG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
